@@ -5,13 +5,13 @@ function verificaRentabilidade(novaEmpresa){
     if(multiploRec>25){
         let TdRent=criaTd("Não rentável")
         TdRent.classList.add('naoRentavel')
-        console.log('não rentável')
+        //console.log('não rentável')
         return TdRent
     }
     else{
         let TdRent=criaTd("Rentável")
         TdRent.classList.add('rentavel')
-        console.log('rentável')
+        //console.log('rentável')
         return TdRent
     }
 }

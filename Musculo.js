@@ -1,8 +1,12 @@
 
-    let botao = document.querySelector("#botao")
+
+   
+   
+   let botao = document.querySelector("#botao")
     botao.addEventListener("click",function(event){
         event.preventDefault                                        
         let form= document.querySelector("#Formulario")
+
         //definindo e relacionando as variaveis do formulario
         var novaEmpresa = novoElemento(novaEmpresa)
         montaTr(novaEmpresa)
@@ -14,7 +18,8 @@
         let mensagemErros=document.querySelector(".classeErro")
         mensagemErros.innerHTML=""
         adicionaEmpresa(novaEmpresa)
-        form.reset()
+        //form.reset()
+        Armazena(novaEmpresa)
     })
 
     
@@ -34,7 +39,7 @@ function novoElemento(novaEmpresa){
         numero:form.numeroDeAcoes.value,
         multiplo:calculaMultiplo(form.valor.value, form.numeroDeAcoes.value, form.lucro.value)
     }
-    console.log(novaEmpresa) 
+    //console.log(novaEmpresa) 
     return novaEmpresa  
 }
 
