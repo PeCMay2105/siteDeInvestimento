@@ -1,7 +1,6 @@
 
 
    
-   
    let botao = document.querySelector("#botao")
     botao.addEventListener("click",function(event){
         event.preventDefault                                        
@@ -19,7 +18,7 @@
         mensagemErros.innerHTML=""
         adicionaEmpresa(novaEmpresa)
         //form.reset()
-        Armazena(novaEmpresa)
+        
     })
 
     
@@ -32,13 +31,18 @@ function calculaMultiplo(custo,acoes,lucratividade){
 
 function novoElemento(novaEmpresa){
     let form= document.querySelector("#Formulario")
-     novaEmpresa={
+    let novoElemento = novaEmpresa={
         nome:form.nome.value,
         lucro:form.lucro.value,
         preco:form.valor.value,
         numero:form.numeroDeAcoes.value,
-        multiplo:calculaMultiplo(form.valor.value, form.numeroDeAcoes.value, form.lucro.value)
+        multiplo:calculaMultiplo(form.valor.value, form.numeroDeAcoes.value, form.lucro.value),
+        id: arrayEmpresa.length
     }
+
+    
+
+    Armazena(novaEmpresa)
     //console.log(novaEmpresa) 
     return novaEmpresa  
 }
@@ -63,7 +67,20 @@ function montaTr(novaEmpresa){
 function criaTd(info){
     let novatd=document.createElement("td")
     novatd.textContent=(info)
+    novatd.dataset.id = arrayEmpresa.length
     return novatd;
 }
 
 
+/* function verificaExistência(novaEmpresa){
+    let string = localStorage.getItem('Empresa Adicionada')
+    let array = JSON.parse(string)
+
+    for(i=0;i<array.length;i++){
+        let objeto = array[i]
+        if(objeto.nome === novaEmpresa.nome){
+           let info = localStorage.getItem(EmpresaAdicionada[i])
+        }
+    }
+
+} */
